@@ -1,0 +1,108 @@
+<?php include 'APP/view/Admin_Header.html'; ?>
+<script src="../../public/js/music_admin.js"></script>
+
+<div class="col-md-2" role="complementary">
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+        <ul class="nav bs-docs-sidenav">
+            <li>
+                <a href="javascript:void(0)">音乐管理</a>
+                <ul class="nav">
+                    <li><a id='fenlei' href="/index.php/singer_admin/index">分类管理</a></li>
+                    <li class="active"><a href="/index.php/MusicAdmin/index">歌手管理</a></li>
+                    <li><a href="/index.php/singerInfo_admin/index">歌曲管理</a></li>
+                    <!--<li><a href="#dropdowns-divider">歌单管理</a></li>-->
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!--<?php include 'APP/view/slidebar.html'; ?>-->
+
+<div class="col-md-10" role="main">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#add" id="add_tab">增加分类</a></li>
+        <li role="presentation"><a href="#list" id="list_tab">分类列表</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="add">
+            <div class="top">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">歌手首页管理</div>
+                    <div class="panel-body">
+                        <form action="javascript:void(0)" method="post" id="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail4">名字</label>
+                                <input type="text" name='name' class="form-control" id="exampleInputEmail4"
+                                       placeholder="名字">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">图片地址</label>
+                                <input type="text" name='pic' class="form-control" id="exampleInputEmail2"
+                                       placeholder="图片地址">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail7">歌曲数量</label>
+                                <input type="text" name='num' class="form-control" id="exampleInputEmail7"
+                                       placeholder="歌曲数量">
+                            </div>
+
+                            <div class="form-group" style="display: block;width:100%">
+                                <label>分类</label>
+                                <div class="radio" style="margin:0" style="width: 50%;">
+                                    <?php foreach($data as $v):?>
+                                    <label style="display: inline-block;text-align: left;margin-left: 60px">
+                                        <?php if(isset ($_REQUEST['id']) && $v['id'] == $_REQUEST['id']):?>
+                                        <input type="radio" name="cid" value="<?php echo $v['id']?>" placeholder=""
+                                               checked="checked">
+                                        <?php else:?>
+                                        <input type="radio" name="cid" value="<?php echo $v['id']?>" placeholder="">
+                                        <?php endif;?>
+                                        <?php echo $v['name']?>
+                                        【<?php echo $v['id']?>】
+                                    </label>
+                                    <br>
+                                    <?php endforeach;?>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-default">添加</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list">
+            <div class="content">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">数据信息</div>
+                    <div class="panel-body">
+                        <div class="bs-example" data-example-id="bordered-table">
+                            <table class="table table-bordered" style="text-align: center">
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center">id</th>
+                                    <th style="text-align: center">分类</th>
+                                    <th style="text-align: center">名字</th>
+                                    <th style="text-align: center">歌曲数量</th>
+                                    <th style="text-align: center">图片地址</th>
+                                    <th style="text-align: center">
+                                        <nobr>操作</nobr>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

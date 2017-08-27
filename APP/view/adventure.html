@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>真心话大冒险</title>
+    <link rel="stylesheet" href="../../public/css/adventure.css">
+    <script src="../../public/js/advanture.js"></script>
+    <script src="../../public/js/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="back">
+            <a href="/"><img src="../../public/img/icon_03.png" alt=""></a>
+        </div>
+        <span>真心话</span>
+        <div class="you">
+            换一批
+        </div>
+    </div>
+    <div class="main">
+        <ul class="middle">
+            <?php foreach($data as $v): ?>
+            <li>
+                <p><?php echo $v['content']?></p>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+    <div class="mask">
+        <div class="require">
+            <div class="title">
+                <h2>真心话</h2>
+                <p>The truth of your heart</p>
+            </div>
+            <div class="wen">
+                <p>从小到大最丢脸出丑的事情是什么？</p>
+            </div>
+            <a href="" class="once">再来一次</a>
+            <div class="close">
+                <a href="#">
+                    <img src="../../public/img/zxh-close.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="careful">
+        <div class="item">
+            <h1>注/意/事/项</h1>
+            <h2><p>MATTERS NEDING</p>&nbsp;ATTENTION</h2>
+        </div>
+        <div class="box"></div>
+        <div class="text">
+            <p>1.先选真心话还是大冒险；</p>
+            <p>2.再次从上方九宫格中选取一个点击打开，如果选中的无法实现，有一次机会重新选择。</p>
+        </div>
+    </div>
+
+    <div class="shadow">
+
+    </div>
+
+    <div class="footer">
+        <div class="true active">真心话</div>
+        <div class="risk">大冒险</div>
+    </div>
+
+
+</body>
+</html>

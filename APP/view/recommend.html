@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>推荐歌曲</title>
+    <link rel="stylesheet" href="../../public/css/recommend.css">
+    <script src="../../public/js/index.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="back">
+            <a href="/"><img src="../../public/img/icon_03.png" alt=""></a>
+        </div>
+        <span>推荐歌曲</span>
+        <div class="you">
+            <a href="/index.php/Music/singing">已点歌曲</a>
+        </div>
+    </div>
+    <ul class="liebiao">
+        <li><a href="/index.php/Music/index">歌手</a></li>
+        <li><a href="/index.php/Music/rank">排行</a></li>
+        <li><a href="/index.php/Music/popular">常唱</a></li>
+        <li><a href="#"><img src="../../public/img/icon_07.png" alt="">推荐歌单</a></li>
+    </ul>
+    <div class="main">
+        <ul class="middle">
+            <?php foreach($data as $v): ?>
+            <li>
+                <img src="<?php echo $v['pic'] ?>" class='re'  alt="">
+                <p><?php echo $v['title'] ?></p>
+                <div class="son">
+                    <img src="../../public/img/recommend01%20(1).png" alt="">
+                    <?php echo $v['num1'] ?>&nbsp;&nbsp;
+                    <img src="../../public/img/recommend01%20(2).png" alt="">
+                    <?php echo $v['num2'] ?>
+                </div>
+                <a href="/index.php/Music/recommends"></a>
+            </li>
+            <?php endforeach; ?>
+
+        </ul>
+    </div>
+
+
+</body>
+</html>

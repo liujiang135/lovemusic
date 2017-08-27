@@ -1,0 +1,268 @@
+
+@import "../../singer/css/mixin";
+@include rem();
+
+a,input,form,button{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-appearance:none;
+}
+*{
+    -webkit-text-size-adjust:100%;
+    -webkit-user-select:none;
+    -user-select:none;
+    max-height:9999999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+button,input{
+    border: none;
+    outline: none;
+}
+img{
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    @include full;
+    box-sizing: border-box;
+}
+body{
+    -webkit-ovflow-scrolling:touch;
+    ovflow-scrolling:touch;
+    background-image: url('../img/singer_bg_01.png');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    padding-left:0.24rem;
+    padding-right:0.24rem;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+.top{
+    @include position(0.44rem,0);
+    width:100%;
+    height:0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.34rem;
+}
+.top>span{
+    height:100%;
+    width:3rem;
+    text-align: center;
+    line-height: 0.88rem;
+    color: #fff;
+}
+.top>.back{
+    width:0.88rem;
+    height:100%;
+    margin-left:0.24rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+.back>a{
+    width:0.4rem;
+    height:0.4rem;
+}
+.back>a>img{
+    width:0.4rem;
+    height:0.4rem;
+}
+.top>.you.active{
+    color: #fff;
+    border:0.02rem solid #fff;
+}
+.top>.you{
+    width:1.2rem;
+    height:0.48rem;
+    border-radius: 0.12rem;
+    margin-right:0.24rem;
+    @include flex1;
+    border:0.02rem solid #ccc;
+    font-size: 0.24rem;
+    color: #ccc;
+}
+.main .middle li.active{
+    background:#FE318E;
+}
+.main{
+    @include position(1.4rem,0);
+    width:100%;
+    z-index: 9;
+    padding-left: 0.24rem;
+    padding-right: 0.24rem;
+    .middle{
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width:100%;
+        background: #fff;
+        padding-top:0.1rem;
+        padding-bottom:0.1rem;
+        box-shadow: 0 4px 15px 2px #F6BACE;
+        li{
+            @include rect(2.1rem,2.1rem);
+            background-image: url('../img/question_03.png');
+            background-size:contain;
+            margin:0.1rem;
+            @include flex1;
+            font-size: 0.24rem;
+            overflow: hidden;
+            z-index:10;
+            p{
+                z-index: 0;
+                font-size: 0.02rem;
+                display: none;
+            }
+        }
+    }
+}
+
+.careful{
+    @include position(9rem,0);
+    width:100%;
+    padding:0 0.24rem 0 0.24rem;
+    background: #fff;
+    font-size: 0.24rem;
+    .item{
+        color:#FE3691;
+        h1{
+            font-size: 0.3rem;
+        }
+        h2{
+            font-size: 0.3rem;
+            @include flex1;
+            justify-content: flex-start;
+            p{
+                color:#8C8C91;
+                font-weight:normal;
+            }
+        }
+    }
+    .box{
+        @include position(0.85rem,0.24rem);
+        width:0.38rem;
+        height:0.06rem;
+        background: #FE318E;
+    }
+    .text{
+        @include position(1rem,0);
+        @include full;
+        padding:0 0.24rem 0 0.24rem;
+        color:#8C8C91;
+        p{
+            height:0.4rem;
+            font-size: 0.24rem;
+        }
+    }
+}
+.footer div.active{
+    background:#fff;
+    color:#FE318E;
+}
+.footer{
+    @include position(11.8rem,0);
+    width:100%;
+    height:0.7rem;
+    @include flex1;
+    div{
+        @include flex1;
+        width:3.42rem;
+        height:100%;
+        margin:0 0.1rem 0 0.1rem;
+        background: #FE318E;
+        border:0.01rem solid #FE318E;
+        border-radius:0.1rem;
+        font-size: 0.3rem;
+        color: #fff;
+    }
+}
+
+.mask.active{
+    transform: scale(1,1);
+}
+.mask{
+    @include flex1;
+    @include full;
+    @include position(0,0);
+    z-index:13;
+    background: rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+    transform: scale(0, 0);
+    .require{
+        @include position(2rem,0);
+        width:100%;
+        height:7rem;
+        background: url("../img/zxh-background.png");
+        background-size:cover;
+        .title{
+            @include position(2rem,0);
+            width:100%;
+            color: #FF3158;
+            font-size:0.26rem;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            h2{
+                width:100%;
+                text-align: center;
+            }
+            p{
+                width:100%;
+                text-align: center;
+            }
+        }
+        .wen{
+            position: absolute;
+            top:3.5rem;
+            left:0;
+            font-size:0.26rem;
+            padding-left:2.5rem;
+            padding-right:2.3rem;
+            transform: rotate(5deg);
+            p{
+                color: #fff;
+                text-align: center;
+            }
+        }
+        .once{
+            @include position(5.7rem,0);
+            width:3.42rem;
+            height:0.7rem;
+            font-size:0.36rem;
+            text-align: center;
+            line-height:0.7rem;
+            color: #fff;
+            background: url("../img/zxh-button.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-left:2rem;
+            margin-right:2rem;
+        }
+        .close{
+            @include position(6.6rem,0);
+            @include flex1;
+            width:100%;
+            height:0.66rem;
+            a{
+                width:0.66rem;
+                height:0.66rem;
+                @include cc;
+                img{
+                    @include cc;
+                    width:0.66rem;
+                    height:0.66rem;
+                }
+            }
+        }
+    }
+}
+

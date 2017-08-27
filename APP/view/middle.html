@@ -1,0 +1,18 @@
+<ul class="middle">
+    <?php foreach($data as $k=>$v): ?>
+    <li class="<?php echo 'c'.$v['id'];?>" data='<?php echo json_encode($v);?>'>
+        <!--<div class="shadow"></div>-->
+        <div class="num">
+            0<?php echo $k+1;?>
+            <!--<img src="<?php echo $v['songs_pic'] ?>" alt="">-->
+        </div>
+        <div class="song" style="margin-left: 0;">
+            <span class="name"><?php echo $v['name'] ?></span>
+            <span class="time"><?php echo $v['duration'] ?></span>
+        </div>
+        <div class="add">
+            <div class="jia"></div>
+        </div>
+    </li>
+    <?php endforeach; ?>
+</ul>

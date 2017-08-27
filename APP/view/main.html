@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <title>个人中心</title>
+    <script src="javascript:history.go(-1)">返回</script>
+</head>
+<body>
+    <div id="ktv">
+        <div class="head">
+            <a href="/" class="back"></a>
+            <p class="title">
+                <span></span>
+                个人中心
+                <span></span>
+            </p>
+        </div>
+        <div class="content">
+            <div class="logo">
+                <div class="write"></div>
+                <div class="name">李嘉琦</div>
+            </div>
+            <ul class="titles">
+                <li>甲壳虫</li>
+                <li>DAZHONG JIA KE CHONG</li>
+                <li>99868B728</li>
+            </ul>
+            <ul class="nums">
+                <li>
+                    <p class="num">925</p>
+                    <p class="word">关注</p>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <p class="num">2</p>
+                    <p class="word">我的粉丝</p>
+                    <a href="/index.php/My/fans"></a>
+                </li>
+                <li>
+                    <p class="num">96</p>
+                    <p class="word">订单</p>
+                    <a href="#"></a>
+                </li>
+            </ul>
+            <div class="works">我的作品</div>
+            <ul class="work">
+                <?php foreach($data as $v): ?>
+                <li>
+                    <p class="song-name"><?php echo $v['name'] ?></p>
+                    <p class="time"><?php echo $v['time'] ?></p>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

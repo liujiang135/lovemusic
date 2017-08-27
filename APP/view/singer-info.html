@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>歌手信息</title>
+    <link rel="stylesheet" href="../../public/css/singer-info.css">
+    <script src="../../public/js/singer-info.js"></script>
+    <!--<script src="../../public/js/music.js"></script>-->
+    <script src="../../public/js/jquery-3.2.1.js"></script>
+</head>
+<style>
+    .jia.rotate{
+        transform: rotateZ(405deg);
+    }
+</style>
+<body>
+    <div class="bg"></div>
+    <div class="geshou">
+        <img style='top:-1rem' src="<?php echo $sing['pic'] ?>" alt="">
+    </div>
+    <div class="yinying" style="height: 7.18rem;">
+        <!--<img src="../../public/img/sg3_02.png" alt="">-->
+        <img src="../../public/img/sg3_02.png" alt="">
+    </div>
+    <div class="top">
+        <div class="back">
+            <!--<a href="/index.php/Music/singers?id=<?php echo $id?>"><img src="../../public/img/icon_03.png" alt=""></a>-->
+            <a href="javascript:history.go(-1)">
+                <img src="../../public/img/icon_03.png" alt="">
+            </a>
+        </div>
+        <span><?php echo $sing['name'] ?></span>
+        <div class="you">
+            <a href="/index.php/Music/singing">已点歌曲</a>
+        </div>
+    </div>
+    <div class="head">
+        <div class="shadow"></div>
+        <div class="pic">
+            <img src="<?php echo $sing['pic'] ?>" alt="">
+            <!--<img src="../../public/img/sg_pic_19.png" alt="">-->
+        </div>
+
+        <ul class="infomation">
+                <li><?php echo $sing['name'] ?> - <?php echo $sing['cate_name'] ?></li>
+                <li><img src="../../public/img/sgif_pic2_06.png" alt="">歌曲 92&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="../../public/img/sgif_pic2_08.png" alt="">MV 24</li>
+            <!--虚线-->
+                <li>本月点击量：49080</li>
+        </ul>
+    </div>
+    <div class="main">
+        <?php include 'APP/view/middle.html'?>
+        <!--
+        <ul class="middle">
+            <?php foreach($data as $k=>$v): ?>
+            <li>
+                <div class="num"><?php echo 0 ?><?php echo ($k+1) ?></div>
+                <div class="song">
+                    <span><?php echo $v['name']?></span>
+                    <span><?php echo $v['duration']?></span>
+                </div>
+                <div class="add">
+                    <div class="jia"></div>
+                </div>
+            </li>
+            <?php endforeach;?>
+        </ul>
+        -->
+    </div>
+
+
+
+</body>
+</html>

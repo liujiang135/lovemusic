@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>排行</title>
+    <link rel="stylesheet" href="../../public/css/swiper.min.css">
+    <link rel="stylesheet" href="../../public/css/ranking.css">
+    <script src="../../public/js/jquery-3.2.1.js"></script>
+    <script src="../../public/js/swiper.min.js"></script>
+    <script src="../../public/js/rank.js"></script>
+</head>
+<style>
+    .tip{
+        width:5%;
+        height:10px;
+        background: red;
+        position: fixed;
+        top:0;
+    }
+    .jia.rotate{
+        transform: rotateZ(405deg);
+    }
+    .middle > li:last-child{
+        border-bottom: none;
+    }
+</style>
+<body>
+<div class="top">
+    <div class="back">
+        <a href="/"><img src="../../public/img/icon_03.png" alt=""></a>
+    </div>
+    <span>排行榜</span>
+    <div class="you">
+        <a href="/index.php/Music/singing">已点歌曲</a>
+    </div>
+</div>
+<ul class="liebiao">
+    <li><a href="/index.php/Music/index">歌手</a></li>
+    <li><a href="#"><img src="../../public/img/icon_07.png" alt="">排行</a></li>
+    <li><a href="/index.php/Music/popular">常唱</a></li>
+    <li><a href="/index.php/Music/recommend">推荐歌单</a></li>
+</ul>
+<div class="rank">
+    <ul class="ranking">
+        <li><a href="#">月排行</a></li>
+        <li class="active"><a href="#">季排行</a></li>
+        <li><a href="#">年排行</a></li>
+    </ul>
+</div>
+
+<div class="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../../public/img/rc1.png" alt=""></div>
+            <div class="swiper-slide"><img src="../../public/img/rc2.png" alt=""></div>
+            <div class="swiper-slide"><img src="../../public/img/rc3.png" alt=""></div>
+            <div class="swiper-slide"><img src="../../public/img/rc4.png" alt=""></div>
+            <div class="swiper-slide"><img src="../../public/img/rc1.png" alt=""></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main">
+    <?php include 'APP/view/middle.html'?>
+</div>
+
+
+</body>
+</html>

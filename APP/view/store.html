@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商店-发现</title>
+    <link rel="stylesheet" href="../../public/css/store.css">
+    <script src="../../public/js/store.js"></script>
+    <script src="../../public/js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="top">
+    <div class="back">
+        <a href="/"><img src="../../public/img/icon_03.png" alt=""></a>
+    </div>
+    <span>发现</span>
+    <div class="you">
+        <!--<a href="#">共26首</a>-->
+    </div>
+</div>
+<div class="xuanze">
+    <ul class="choice">
+        <li class="choice1 active">
+            <span>酒水</span>
+            <span class="water">0</span>
+        </li>
+        <li class="choice2">
+            <span>零食</span>
+            <span class="foot">0</span>
+        </li>
+        <li class="choice3"></li>
+    </ul>
+</div>
+
+<div class="main">
+    <ul class="list drinklist" >
+        <?php foreach($data as $v):?>
+        <li class="lists" data = '<?php echo json_encode($v) ?>'>
+            <div class="pic">
+                <img src="<?php echo $v['pic']?>" alt="">
+            </div>
+            <ul class="text">
+                <li>
+                    <span class="name"><?php echo $v['name']?></span>
+                        <?php for ($x=0; $x<=$v['num']; $x++) {
+                              echo "<span class='fire'></span>";
+                        }  ?>
+                </li>
+                <li>
+                    <span>￥<span class="price"><?php echo $v['price']?></span>/瓶</span>
+                </li>
+                <li class="xuan">
+                    <span class="minus"></span>
+                    <span class="num">0</span>
+                    <span class="add"></span>
+                </li>
+            </ul>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+    <ul class="list foodlist">
+        <?php foreach($data1 as $v):?>
+        <li class="lists" data = '<?php echo json_encode($v) ?>'>
+            <div class="pic">
+                <img src="<?php echo $v['pic']?>" alt="">
+            </div>
+            <ul class="text">
+                <li>
+                    <span class="name"><?php echo $v['name']?></span>
+                    <?php for ($x=0; $x<=$v['num']; $x++) {
+                              echo "<span class='fire'></span>";
+                    }  ?>
+                </li>
+                <li>
+                    <span>￥<span class="price"><?php echo $v['price']?></span>/瓶</span>
+                </li>
+                <li class="xuan">
+                    <span class="minus"></span>
+                    <span class="num">0</span>
+                    <span class="add"></span>
+                </li>
+            </ul>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<footer>
+    <div class="choiced">
+        <p>已选</p>
+        <div class="box"></div>
+        <div class="omit">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </div>
+    <div class="result">
+        <div class="rmb">
+            <span class="s1">合计</span>
+            <span class="s2">0.00</span>
+            <span class="s3">RMB</span>
+        </div>
+        <!--<a href="#" class="done"> ·  选好了  ·</a>-->
+        <a href="/index.php/Store/bill" class="done"> ·  选好了  ·</a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>排行</title>
+    <link rel="stylesheet" href="../../public/css/popular.css">
+    <script src="../../public/js/jquery-3.2.1.js"></script>
+    <script src="../../public/js/popular.js"></script>
+</head>
+<style>
+    .jia.rotate{
+        transform: rotateZ(405deg);
+    }
+    .middle > li:last-child{
+        border-bottom: none;
+    }
+</style>
+<body>
+    <div class="top">
+        <div class="back">
+            <a href="/"><img src="../../public/img/icon_03.png" alt=""></a>
+        </div>
+        <span>常唱</span>
+        <div class="you">
+            <a href="/index.php/Music/singing">已点歌曲</a>
+        </div>
+    </div>
+    <ul class="liebiao">
+        <li><a href="/index.php/Music/index">歌手</a></li>
+        <li><a href="/index.php/Music/rank">排行</a></li>
+        <li><a href="#"><img src="../../public/img/icon_07.png" alt="">常唱</a></li>
+        <li><a href="/index.php/Music/recommend">推荐歌单</a></li>
+    </ul>
+    <div class="backimg">
+        <img src="../../public/img/sg3_02.png" alt="" style="height: 8rem">
+    </div>
+    <div class="main">
+        <?php include 'APP/view/middle.html'?>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<?php include 'APP/view/Admin_Header.html'; ?>
+<script src="../../public/js/game_admin.js"></script>
+
+<div class="container">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#add" id="add_tab">增加分类</a></li>
+        <li role="presentation"><a href="#list"  id="list_tab">分类列表</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="add">
+            <div class="top">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">游戏内容管理</div>
+                    <div class="panel-body">
+                        <form action="javascript:void(0)" id="form" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">内容</label>
+                                <input type="text" name='content' class="form-control" id="exampleInputEmail1" placeholder="内容">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">选项</label>
+                                <input type="text" name='cid' class="form-control" id="exampleInputEmail12"
+                                       placeholder="1:真心话 2:大冒险">
+                            </div>
+                            <!--   <div class="form-group">
+                                   <div class="radio" style="margin:0">
+                                       <label>
+                                           <input type="radio" name=type id="optionsRadios1" value="1" checked>
+                                           真心话
+                                       </label>
+                                   </div>
+                                   <div class="radio" style="margin:0">
+                                       <label>
+                                           <input type="radio" name=type id="optionsRadios2" value="2">
+                                           大冒险
+                                       </label>
+                                   </div>
+                               </div>-->
+                            <button id='submit' type="submit" class="btn btn-default">添加</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list">
+            <div class="content">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">数据信息</div>
+                    <div class="panel-body">
+                        <div class="bs-example" data-example-id="bordered-table">
+                            <table class="table table-bordered" style="text-align: center">
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center">id</th>
+                                    <th style="text-align: center">内容</th>
+                                    <th style="text-align: center">
+                                        <nobr>类型</nobr>
+                                    </th>
+                                    <th style="text-align: center">
+                                        <nobr>操作</nobr>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>

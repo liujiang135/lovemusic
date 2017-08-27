@@ -1,0 +1,253 @@
+
+@import "mixin";
+@include rem;
+a,input,form,button{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-appearance:none;
+}
+*{
+    -webkit-text-size-adjust:100%;
+    -webkit-user-select:none;
+    -user-select:none;
+    max-height:9999999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+button,input{
+    border: none;
+    outline: none;
+}
+img{
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+}
+body{
+    -webkit-ovflow-scrolling:touch;
+    ovflow-scrolling:touch;
+    background-image: url('../img/kgebg1.png');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    padding-left:0.24rem;
+    padding-right:0.24rem;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+.top{
+    position: absolute;
+    left:0;
+    top:0.44rem;
+    width:100%;
+    height:0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.34rem;
+    .back{
+        width:0.88rem;
+        height:100%;
+        margin-left:0.24rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items:center;
+        a{
+            width:0.4rem;
+            height:0.4rem;
+            img{
+                width:0.4rem;
+                height:0.4rem;
+            }
+        }
+    }
+}
+.title{
+    @include position(1.28rem,0);
+    @include rect(100%,0.8rem);
+    @include flex1;
+    flex-direction:column;
+    span{
+        color: #fff;
+        font-size: 0.28rem;
+    }
+}
+
+.main{
+    @include position(2.6rem,0);
+    width:5.9rem;
+    height:8.7rem;
+    @include leftright;
+    background: #fff;
+    -webkit-border-radius:0.2rem;
+    -moz-border-radius:0.2rem;
+    border-radius:0.2rem;
+    .pic{
+        width:100%;
+        height:4rem;
+        img{
+            width:100%;
+            height:100%;
+        }
+        .btnn{
+            @include position(1.5rem,2.4rem);
+            width:1.18rem;
+            height:1.18rem;
+        }
+    }
+    h4{
+        margin-top:0.2rem;
+        padding-left:0.3rem;
+        font-size:0.3rem;
+    }
+    .fenge{
+        width:0.55rem;
+        height:0.02rem;
+        display: flex;
+        padding-left:0.3rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        img{
+            width:0.55rem;
+            height:0.02rem;
+        }
+    }
+    p{
+        width:100%;
+        height:0.8rem;
+        font-size:0.24rem;
+        padding-left:0.3rem;
+        padding-right:0.3rem;
+        color: #BBBBBB;
+    }
+
+    .canyu{
+        @include position(5.6rem,0);
+        width:100%;
+        height:0.72rem;
+        @include flex1;
+        padding-left:0.3rem;
+        padding-right:0.3rem;
+        .diange{
+            width:50%;
+            height:100%;
+            @include flex1;
+            justify-content: flex-start;
+            font-size: 0.24rem;
+            color: #BBBBBB;
+            img{
+                width:0.72rem;
+                height:0.72rem;
+            }
+        }
+    }
+    .bottom{
+        @include position(6.4rem,0);
+        width:100%;
+        height:1rem;
+        padding-left:0.3rem;
+        @include flex1;
+        justify-content: flex-start;
+        img{
+            @include rect(1rem,1rem);
+            border-radius:0.1rem;
+            margin-right:0.2rem;
+        }
+    }
+    .button{
+        @include position(7.6rem,0);
+        width:100%;
+        height:0.7rem;
+        font-size:0.26rem;
+        @include flex1;
+        color: #fff;
+        .btn1{
+            background: url("../img/kge_12.png");
+            background-size:contain;
+            width:2.5rem;
+            height:0.7rem;
+            @include flex1;
+            margin-left:0.1rem;
+            margin-right:0.1rem;
+        }
+    }
+}
+
+.middle{
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    li{
+        width:100%;
+        height:3.18rem;
+        margin-bottom:0.3rem;
+        border-radius: 0.3rem;
+        box-shadow: 0 4px 15px 2px #F6BACE;
+        color: #fff;
+        font-size:0.24rem;
+        position: relative;
+        .re{
+            border:0.1rem solid #fff;
+            width:100%;
+            height:100%;
+            border-radius: 0.2rem;
+        }
+        a{
+            position: absolute;
+            top:0;
+            left:0;
+            @include full;
+        }
+        p{
+            width:3.2rem;
+            height:0.5rem;
+            @include flex1;
+            position: absolute;
+            top:2.35rem;
+            left:0.7rem;
+        }
+        .son{
+            width:3.2rem;
+            height:0.5rem;
+            @include flex1;
+            position: absolute;
+            top:2.2rem;
+            left:3.3rem;
+            img{
+                width:0.2rem;
+                height:0.2rem;
+                margin-left:0.1rem;
+                margin-right:0.1rem;
+            }
+        }
+    }
+}
+
+.dot{
+    @include position(12.1rem,0);
+    width:100%;
+    height:0.17rem;
+    @include flex1;
+    li{
+        @include circle(0.17rem);
+        background: #fff;
+        margin:0.1rem;
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait | landscape"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../public/css/play.css">
+    <title>歌曲页面</title>
+    <script src="../../public/js/jquery-3.2.1.js"></script>
+    <script src="../../public/js/play.js"></script>
+</head>
+<style>
+    .lyrics li{
+        transform: scale(1,1);
+        transition: all 1s ease;
+    }
+    .lyrics .hot{
+        color: yellow;
+        transform: scale(1.2,1.2);
+    }
+    .lyrics{
+        overflow: hidden;
+    }
+</style>
+<body style='background:url("<?php echo $data['songs_pic']?>") 50%/cover'>
+<img id='bg1' src="../../public/img/play_bg.png" width="100%" height="100%">
+<img id='bg2' src="../../public/img/play_bg2.png" style='position: fixed' width="100%" height="100%">
+<div id="ktv">
+    <input type="hidden" value="<?php echo $data['name']?>">
+    <audio id='audio' src="<?php echo $data['src']?>"></audio>
+    <div class="head">
+        <div class="more">
+            <a href="/index.php/Music/singing"></a>
+        </div>
+        <p><?php echo $data['songs_name']?>—<?php echo $data['name']?></p>
+    </div>
+    <ul class="lyrics">
+        <!--<li>你停在了这条我们熟悉的街</li>
+        <li>把你准备好的台词全念一遍</li>
+        <li>我还在逞强 说着谎</li>
+        <li>也没能力遮挡 你去的方向</li>
+        <li>至少分开的时候我落落大方</li>
+        <li>我后来都会选择绕过那条街</li>
+        <li>又多希望在另一条街能遇见</li>
+        <li>思念在逞强 不肯忘</li>
+        <li>怪我没能力跟随 你去的方向</li>
+        <li>若越爱越被动 越要落落大方</li>
+        <li>你还要我怎样 要怎样</li>
+        <li>你突然来的短信就够我悲伤</li>
+        <li>我没能力遗忘 你不用提醒我</li>
+        <li>哪怕结局就这样</li>
+        <li>我还能怎样 能怎样</li>
+        <li>最后还不是落得情人的立场</li>
+        <li>你从来不会想 我何必这样</li>
+        <li>我慢慢地回到自己的生活圈</li>
+        <li>也开始可以接触新的人选</li>
+        <li>爱你到最后 不痛不痒</li>
+        <li>留言在计较 谁爱过一场</li>-->
+    </ul>
+    <ul class="btns">
+        <li>
+            <a href="">
+                <img src="../../public/img/btn1.png" alt="">
+                <span>原/伴</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../../public/img/btn2.png" alt="">
+                <span>切歌</span>
+            </a>
+        </li>
+        <li class="btn play">
+            <a href="javascript:void(0)">
+                <img id='play1' src="../../public/img/btn3.png" alt="" class="btn-img">
+                <img id='stop1' src="../../public/img/btn3s.png" alt="" class="btn-img">
+                <span></span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../../public/img/btn4.png" alt="">
+                <span>重唱</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../../public/img/btn5.png" alt="">
+                <span>录歌</span>
+            </a>
+        </li>
+    </ul>
+    <div class="voice">
+        <div class="voice1">
+            <div class="micro"></div>
+            <div class="long">
+                <div class="long1"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="voice2">
+            <div class="sound"></div>
+            <div class="longs">
+                <div class="longs1"></div>
+                <div class="circles"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

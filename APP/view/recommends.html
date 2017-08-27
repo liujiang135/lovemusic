@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>摔跤吧,爸爸</title>
+    <link rel="stylesheet" href="../../public/css/popular.css">
+    <script src="../../public/js/index.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="back">
+            <a href="/index.php/Music/recommend"><img src="../../public/img/icon_03.png" alt=""></a>
+        </div>
+        <span>摔跤吧,爸爸</span>
+        <div class="you">
+            <a href="/index.php/Music/singing">已点歌曲</a>
+        </div>
+    </div>
+    <div class="backimg">
+        <img src="../../public/img/sg3_02.png" alt="">
+    </div>
+    <div class="main">
+        <ul class="middle">
+            <?php foreach($data as $v): ?>
+            <li>
+                <div class="shadow"></div>
+                <div class="num">
+                    <img src="<?php echo $v['pic'] ?>" alt="">
+                </div>
+                <div class="song">
+                    <span><?php echo $v['name'] ?></span>
+                    <span><?php echo $v['time'] ?></span>
+                </div>
+                <div class="add">
+                    <div class="jia"></div>
+                </div>
+            </li>
+            <?php endforeach; ?>
+
+        </ul>
+    </div>
+
+
+
+
+</body>
+</html>

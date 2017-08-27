@@ -1,0 +1,189 @@
+
+
+$thisme:#ffcc51;
+$url:'../imgs';
+
+//%  继承的方法   --> 群组选择器
+%v2{
+    //@include wh(30px);
+}
+
+// 随机背景颜色
+@mixin bgcolor{
+    $r:ceil(random()*256);
+    $g:ceil(random()*256);
+    $b:ceil(random()*256);
+    $a:random();
+    background: rgba($r,$g,$b,$a);
+}
+@mixin full{
+    width:100%;
+    height:100%;
+}
+@mixin flex1{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+//定位
+@mixin position($t,$l){ //定位
+    position: absolute;
+    top:$t;
+    left:$l;
+}
+//上下居中
+@mixin topbottom{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    margin:auto;
+}
+//左右居中
+@mixin leftright{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+}
+//上下左右居中
+@mixin cc{  //center   center
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+
+//长方形  正方形  圆
+@mixin rect($w,$h){   //长方形
+    width:$w;
+    height:$h;
+}
+@mixin zheng($z){       //正方形
+    width:$z;
+    height:$z;
+}
+@mixin circle($size){      //圆形
+    @include zheng($size);
+    border-radius:50%;
+}
+
+//传参
+@mixin wh($w,$h:20px){
+    width:$w;
+    height:$h;
+}
+
+//混合宏
+@mixin rect1($w:100%,$h:auto){ //长方形
+    width:$w;
+    height:$h;
+}
+
+//  精灵图片
+@mixin bgimg($img,$size,$repeat:no-repeat){
+    background-image: url($img);
+    -webkit-background-size:$size;
+    background-size:$size;
+    background-repeat: $repeat;
+}
+
+// 区分子元素 添加随机颜色
+@mixin child($box,$num:20){
+    @for $i from 1 through $num{
+        #{$box}:nth-child(#{$i}){
+            @include bgcolor;
+            //border:2px solid #000;
+            color: #fff;
+            @include flex1;
+        }
+    }
+}
+//@include child('.middle div',9);
+
+
+//   动画
+@keyframes drop {
+    0%{
+        background: red;
+        transform: translate3d(-1000px,0,0);
+        //transform: translate(-1000px,0);
+    }
+    /* 100%{ transform: translate3d(0,0,0); }*/
+}
+@mixin donghua($box,$num:20){
+    @for $i from 1 through $num{
+        #{$box}:nth-child(#{$i}){
+            animation: drop 1s cubic-bezier(0.38, 1.48, 0.22, 1.32) ( $i - 1 ) * 0.1s both;
+        }
+    }
+}
+
+//十二栅格
+@mixin grid($num2:12){   //十二栅格
+    // 对父元素清除浮动
+    .row{  // 父元素 : 不清除浮动父元素为高度0，清除浮动后为200px
+        position: relative;
+        width:100%;
+        &::after{            //清除浮动
+            content: '';
+            clear: both;
+            display: block;
+        }
+    }
+    //超小屏
+    @media screen and (max-width:768px){
+        @for $i from 1 through $num2 {
+            .col-sm-#{$i}{
+                width:percentage( $i / $num2);
+            }
+        }
+    }
+    //小屏
+    @media screen and (min-width:768px){
+        @for $i from 1 through $num2 {
+            .col-sm-#{$i}{
+                width:percentage( $i / $num2);
+            }
+        }
+    }
+    //中屏
+    @media screen and (min-width:960px){
+        @for $i from 1 through $num2 {
+            .col-md-#{$i}{
+                width:percentage( $i / $num2);
+            }
+        }
+    }
+    //大屏
+    @media screen and (min-width:1024px){
+        @for $i from 1 through $num2 {
+            .col-lg-#{$i}{
+                width:percentage( $i / $num2);
+            }
+        }
+    }
+}
+
+//移动端 rem
+@mixin rem{
+    $d-list:320px,360px,375px,384px,412px,414px,600px,750px;
+    @each $v in $d-list{
+        @media screen and (min-width:#{$v}){
+            html{
+                font-size:100px * ( $v /750px);
+            }
+        }
+    }
+}
+
+
+//兼容性
+@mixin border-radiue($v){
+    -webkit-border-radius:$v;
+    -moz-border-radius:$v;
+    border-radius:$v;
+}

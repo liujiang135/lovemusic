@@ -1,0 +1,63 @@
+
+@import "mixin";
+
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+body{
+     //width:100%;
+     //height:100%;
+     //@include flex1;
+ }
+
+@include child('ul li');
+
+
+.navbar-inverse {
+    background: #000;
+}
+
+.panel-default{
+    width:400px;
+    margin:0 auto;
+}
+
+.content{
+    width:100%;
+    height:40px;
+    @include flex1;
+    a{
+        width:100px;
+        background: #E0E0E0;
+        @include flex1;
+    }
+}
+
+.error1{
+    width:100%;
+    height:20px;
+    @include flex1;
+    color: red;
+    span{
+        width:160px;
+        height:20px;
+        margin-left:113px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+

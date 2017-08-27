@@ -1,0 +1,391 @@
+@import "../../singer/css/mixin";
+
+@include rem();
+
+a, input, form, button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+}
+
+* {
+  -webkit-text-size-adjust: 100%;
+  -webkit-user-select: none;
+  -user-select: none;
+  max-height: 9999999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button, input {
+  border: none;
+  outline: none;
+}
+
+img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html, body {
+  width: 100%;
+  //height: 100%;
+  box-sizing: border-box;
+  //overflow: scroll;
+}
+
+body {
+  //-webkit-ovflow-scrolling:touch;
+  //ovflow-scrolling:touch;
+  background-image: url('../img/bg1.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-left: 0.24rem;
+  padding-right: 0.24rem;
+  width: 100%;
+  //height: 100%;
+  box-sizing: border-box;
+  //overflow: scroll;
+}
+
+.top {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0.88rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.34rem;
+  span {
+    color: #fff;
+  }
+}
+
+.top > .back {
+  width: 0.88rem;
+  height: 100%;
+  margin-left: 0.24rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  a {
+    width: 0.4rem;
+    height: 0.4rem;
+    img {
+      width: 0.4rem;
+      height: 0.4rem;
+    }
+  }
+}
+
+.you {
+  width: 1.2rem;
+  height: 0.48rem;
+  border-radius: 0.12rem;
+  @include flex1;
+}
+/* 选项卡 */
+.xuanze {
+  @include position(1rem, 0);
+  width: 100%;
+}
+
+.choice {
+  @include flex1;
+  align-items: center;
+  width: 3.06rem;
+  height: 0.66rem;
+  background: #fff;
+  border-radius: .5rem;
+  padding: .1rem;
+  margin: 0 auto;
+  font-size: 0.26rem;
+  transition: all 1s ease;
+  position: relative;
+  li {
+    width: 50%;
+    float: left;
+    height: 100%;
+    text-align: center;
+    border-radius: .3rem;
+    @include flex1;
+    align-items: center;
+    z-index: 10;
+    color: #FF318D;
+  }
+  .choice1{
+    color: #fff;
+    transition: all 1s ease;
+  }
+  .choice3{
+    position: absolute;
+    left:0.1rem;
+    width: 1.4rem;
+    height: 70%;
+    border-radius: .3rem;
+    background: #FF318D;
+    z-index: 9;
+    transition: all 0.7s ease;
+  }
+}
+
+.xuanze .choice1.active~ .choice3{
+  transform:translate3d(0rem,0,0);
+}
+.xuanze .choice2.active~ .choice3{
+  transform:translate3d(1.5rem,0,0);
+}
+
+/* 内容列 */
+.main {
+  position: absolute;
+  top: 2.6rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.list {
+  width: 100%;
+  height: auto;
+  padding-bottom: 2rem;
+}
+.list:nth-child(1){
+  display: block;
+}
+.list:nth-child(2){
+  display: none;
+}
+
+.lists {
+  width: 100%;
+  height: 2.7rem;
+  display: flex;
+  align-items: center;
+  .pic {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 2.35rem;
+      height: 1.72rem;
+    }
+  }
+  .text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 1.72rem;
+    align-items: flex-start;
+    li {
+      display: inline-flex;
+      flex: 1;
+    }
+    .name {
+      font-size: .24rem;
+    }
+    .fire {
+      width: .16rem;
+      height: .22rem;
+      margin-left: .1rem;
+      background: url('../img/fire.png') no-repeat 50%/100%;
+    }
+  }
+}
+
+.text > li:nth-of-type(2) > span {
+  font-size: .3rem;
+  color: #FF326C;
+}
+
+.text > li {
+  .minus {
+    display: inline-block;
+    width: .35rem;
+    height: .35rem;
+    border-radius: 50%;
+    background: url('../img/minus.png') center center no-repeat;
+    background-size: 100%;
+  }
+  .num {
+    @include flex1;
+    width: .8rem;
+    height: .35rem;
+    border-radius: .18rem;
+    border: 1px solid #D2D2D2;
+    font-size: .26rem;
+    color: #858585;
+    margin-left:0.15rem;
+    margin-right:0.15rem;
+  }
+  .add {
+    width: .35rem;
+    height: .35rem;
+    border-radius: 50%;
+    background: url('../img/add.png') center center no-repeat;
+    background-size: 100%;
+  }
+}
+
+/* 底部 */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 2.4rem;
+  background: #fff;
+  padding: .2rem;
+  box-sizing: border-box;
+}
+
+.choiced {
+  width: 100%;
+  height: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choiced > p {
+  font-size: .26rem;
+}
+
+.choiced .box {
+  width: 80%;
+  height: 0.2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  nobr {
+    height: 0.42rem;
+    @include flex1;
+    font-size: 0.24rem;
+    background: #FF318E;
+    margin-left: 0.15rem;
+    color: #fff;
+    padding: 0.1rem;
+    border-radius: 0.13rem;
+  }
+}
+
+.choiced .omit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.choiced .omit > div {
+  width: .09rem;
+  height: .09rem;
+  border-radius: 50%;
+  margin: 0 .04rem;
+}
+
+//::-webkit-scrollbar {
+//  width: 5px;
+//  height: 5px;
+//}
+//::-webkit-scrollbar-track-piece {
+//  background-color: rgba(0,0,0,.2);
+//}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+  width: 16px;
+  height: 7px;
+  background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #d2cece;
+}
+
+
+.one {
+  background: #FF318E;
+}
+
+.two {
+  background: #FF83BB;
+}
+
+.three {
+  background: #FFD6E8;
+}
+
+.result {
+  //position: absolute;
+  top:0.4rem;
+  width: 100%;
+  height: .88rem;
+  margin-top: .4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rmb {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  color: #FA3C72;
+  .s1 {
+    font-size: .34rem;
+  }
+  .s2 {
+    font-size: .44rem;
+    font-weight: 700;
+  }
+  .s3 {
+    font-size: .28rem;
+    font-weight: 700;
+  }
+}
+
+.result > a {
+  display: block;
+  text-decoration: none;
+  width: 3.58rem;
+  color: #fff;
+  font-size: .3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: url('../img/done.png') center center no-repeat/cover;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>粉丝</title>
+    <link rel="stylesheet" href="../../public/css/fans.css">
+    <script src="../../public/js/index.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="back">
+            <a href="/index.php/My/index"><img src="../../public/img/icon_03.png" alt=""></a>
+        </div>
+        <span>·&nbsp;&nbsp;我的粉丝&nbsp;26&nbsp;&nbsp;·</span>
+        <div class="you">
+            <a href="#"><img src="../../public/img/add_03.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="main">
+        <ul class="middle">
+            <?php foreach($data as $v): ?>
+            <li>
+                <div class="num">
+                    <img src="../../public/img/fans_03.png" alt="">
+                </div>
+                <div class="song">
+                    <div class="people">
+                        <span><?php echo $v['name'] ?></span>
+                        <img src="../../public/img/fans_06.png" alt="">
+                    </div>
+                    <span><?php echo $v['text'] ?></span>
+                </div>
+                <div class="add">
+                    <p>特别关注</p>
+                    <!--<p>删除</p>-->
+                </div>
+            </li>
+            <?php endforeach; ?>
+
+        </ul>
+    </div>
+
+
+
+
+</body>
+</html>
